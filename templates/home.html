@@ -2,22 +2,65 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>ML API</title>
+  <title>Boston Housing Prediction</title>
+<style>
+  body {
+    background-color: #94D3F6;
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  h1 {
+    color: #5B5B5B;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  input[type="text"], input[type="number"] {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 6px 0;
+    box-sizing: border-box;
+    border: 2px solid #94D3F6;
+    border-radius: 4px;
+  }
+  input[type="submit"] {
+    width: 20%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  .results {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+</style>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-
   
 </head>
-
 <body>
  <div class="login">
 	<h1>Boston House Price Prediction</h1>
-
+    <h3>Enter the values to predict the price </h2>
+    {{prediction_text}}
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-      <input type="text" name="CRIM" placeholder="CRIM" required="required" /><br>
+      <input type="text" name="CRIM" placeholder="CRIM: per capita crime rate by town" required="required" /><br>
     	<input type="text" name="ZN" placeholder="ZN" required="required" /><br>
         <input type="text" name="INDUS" placeholder="INDUS" required="required" /><br>
         <input type="text" name="CHAS" placeholder="CHAS" required="required" /><br>
@@ -30,18 +73,12 @@
         <input type="text" name="PTRATIO" placeholder="PTRATIO" required="required" /><br>
         <input type="text" name="B" placeholder="B" required="required" /><br>
         <input type="text" name="LSTAT" placeholder="LSTAT" required="required" /><br>
-
-       
-
+   
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
-
    <br>
-   <br>
-  
-   
+   <br>   
  </div>
  {{prediction_text}}
-
 </body>
 </html>
