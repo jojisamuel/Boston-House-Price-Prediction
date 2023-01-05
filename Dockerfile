@@ -1,6 +1,9 @@
-FROM python:3.10
-RUN apt update -y && apt install awscli -y && apt install python3-pip -y
-COPY . /app
+FROM python:3.7-slim-buster
+
+RUN apt update -y && apt install awscli -y
 WORKDIR /app
+
+COPY . /app
 RUN pip install -r requirements.txt
-CMD [ "python3", "./app.py"]
+
+CMD ["python3", "app.py"]
