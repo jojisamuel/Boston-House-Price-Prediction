@@ -2,7 +2,11 @@
 
 ![image](https://user-images.githubusercontent.com/57321948/196933065-4b16c235-f3b9-4391-9cfe-4affcec87c35.png)
 
-## Boston Housing Dataset
+## Overview
+
+This project aims to build a model that can accurately predict housing prices in the Boston area. The model will be trained on a dataset containing various features about houses in the Boston area, including the number of rooms, the crime rate in the neighborhood, and the distance to employment centers. The trained model will be deployed in AWS & will accessed using Flask API.
+
+## Data
 
 The Boston Housing dataset is a classic dataset for evaluating regression algorithms. It contains information on the median value of owner-occupied homes in various neighborhoods in the Boston area, along with other variables such as crime rate, air pollution, and the number of rooms in the house.
 Data Description
@@ -25,11 +29,14 @@ The dataset consists of 506 samples and 13 features. The features are as follows
 
 The target variable is the median value of owner-occupied homes in $1000s.
 
-### Step 1 - Install the requirements
+## Prerequisites
 
-```bash
-pip install -r requirements.txt
-```
+Before running the code in this project, you will need to have the following packages installed:
+
+    pandas
+    numpy
+    scikit-learn
+    flask
 
 ### AWS-CICD-Deployment-with-Github-Actions
 ```
@@ -83,3 +90,11 @@ AWS_SECRET_ACCESS_KEY=
 AWS_REGION = us-east-1
 AWS_ECR_LOGIN_URI = 
 ECR_REPOSITORY_NAME = 
+
+```
+
+## Acknowledgements
+
+   * UCI Machine Learning Repository for the Boston Housing dataset
+   * scikit-learn documentation for guidance on model training and evaluation
+   * AWS Flask documentation for guidance on deploying a Flask app to AWS
